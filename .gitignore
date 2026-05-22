@@ -13,6 +13,10 @@ target/
 # Maven helpers
 cp.txt
 
+# Tests excluded from VCS (kept locally for development only)
+src/test/
+src/main/java/viper/com/claudecode/SmokeRunner.java
+
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
