@@ -4,6 +4,7 @@ import io.github.cdimascio.dotenv.Dotenv;
 import viper.com.claudecode.compress.Compression;
 import viper.com.claudecode.core.AgentLoop;
 import viper.com.claudecode.core.Context;
+import viper.com.claudecode.model.ContentBlock;
 import viper.com.claudecode.model.Message;
 
 import java.io.BufferedReader;
@@ -89,8 +90,16 @@ public class Main {
                 System.err.println("[agent error] " + t.getMessage());
                 t.printStackTrace();
             }
-            for(Message msg : history){
-                System.out.print(msg.content);
+
+            Object content = history.get(history.size() - 1).content;
+            if (content instanceof List<?> list) {
+                for (Object block : list) {
+                    if (block instanceof ContentBlock cb && "text".equals(cb.type)) {
+                        System.out.println(cb.text);
+                    }
+                }
+            } else if (content instanceof String s) {
+                System.out.println(s);
             }
             System.out.println();
         }
