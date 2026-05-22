@@ -70,10 +70,4 @@ public final class Config {
         if (v == null || v.isBlank()) v = System.getenv("ANTHROPIC_AUTH_TOKEN");
         return v;
     }
-
-    public static String getProvider() {
-        String v = System.getProperty("LLM_PROVIDER");
-        if (v == null || v.isBlank()) v = System.getenv("LLM_PROVIDER");
-        return v;
-    }
 }
