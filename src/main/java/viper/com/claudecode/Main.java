@@ -89,6 +89,9 @@ public class Main {
                 System.err.println("[agent error] " + t.getMessage());
                 t.printStackTrace();
             }
+            for(Message msg : history){
+                System.out.print(msg.content);
+            }
             System.out.println();
         }
     }
