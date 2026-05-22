@@ -1,4 +1,18 @@
 target/
+*.class
+*.iml
+.idea/
+
+# Agent runtime artifacts
+.tasks/
+.team/
+.task_outputs/
+.transcripts/
+.env
+
+# Maven helpers
+cp.txt
+
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
